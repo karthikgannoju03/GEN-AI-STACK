@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* These variables define the colors that Tailwind's 'background', 'border', etc. classes rely on */
+  :root {
+    --background: 0 0% 100%;       /* White */
+    --foreground: 222.2 47.4% 11.2%; /* Dark Text */
+    
+    --primary: 142.1 76.2% 36.3%;   /* A deep green */
+    --primary-foreground: 210 20% 98%; /* Light text on green */
+    
+    --border: 214.3 31.8% 91.4%; 
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142.1 76.2% 36.3%;
+    
+    --radius: 0.5rem; /* 8px */
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* React Flow Styles */
+.react-flow__node {
+  @apply shadow-lg border border-border rounded-lg;
+}
+
+.react-flow__node.selected {
+  @apply border-2 border-primary-500 ring-4 ring-primary-500/20;
+}
+
+.react-flow__edge-path {
+  @apply stroke-gray-400;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  @apply stroke-primary-500;
+}
+
+.react-flow__handle {
+  @apply w-3 h-3 border-2 border-white bg-primary-500 rounded-full;
+}
+
+/* Positioning adjustments */
+.react-flow__handle-top {
+  @apply -top-1.5;
+}
+
+.react-flow__handle-bottom {
+  @apply -bottom-1.5;
+}
+
+.react-flow__handle-left {
+  @apply -left-1.5;
+}
+
+.react-flow__handle-right {
+  @apply -right-1.5;
+}
